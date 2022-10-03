@@ -7,6 +7,7 @@ use App\Enum\UserRoleEnum;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,14 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        User::factory(1)->create();
+        User::factory()->create([
+            'name' => fake()->name(),
+            'email' => 'lioshakhirny@gmail.com',
+            'role_id'=>UserRoleEnum::ADMIN->value,
+            'email_verified_at' => now(),
+            'title'=>'',
+            'password' => bcrypt('admin'),// password
+            'remember_token' => Str::random(10),
+        ]);
     }
 }
