@@ -8,7 +8,7 @@
                 <i class="fas fa-align-justify"></i>
                 <p>
                     Пользователи
-                    <span class="badge badge-info right">2</span>
+                   
                 </p>
             </a>
 
